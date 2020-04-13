@@ -6,12 +6,12 @@ phases:
     commands: 
       - apt-get update -y
       - apt-get install -y jq
-      - terraformImage="hashicorp/terraform:0.12.23"
+      - terraformImage="hashicorp/terraform:0.12.24"
       - docker pull $terraformImage
       - PROJ_NAME="$PROJETCT_NAME"
       - REPOSITORY_URI="$ECR_ADDRESS"
-      - mkdir .aws && aws s3 cp s3://cicd-fiap-28ati-12345/instance-need/.aws/credentials .aws/ && aws s3 cp s3://cicd-fiap-28ati-12345/instance-need/.aws/config .aws/
-      - mkdir .ssh && aws s3 cp s3://cicd-fiap-28ati-12345/instance-need/.ssh/fiap-lab.pem .ssh/ 
+      - mkdir .aws && aws s3 cp s3://cicd-fiap-28ati-333050/instance-need/.aws/credentials .aws/ && aws s3 cp s3://cicd-fiap-28ati-333050/instance-need/.aws/config .aws/
+      - mkdir .ssh && aws s3 cp s3://cicd-fiap-28ati-333050/instance-need/.ssh/fiap-lab.pem .ssh/ 
   pre_build:
     commands:
       - login=$(aws ecr get-login --region=us-east-1)
